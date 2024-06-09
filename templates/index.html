@@ -1,14 +1,21 @@
-<!-- templates/index.html -->
 <!doctype html>
-<title>Upload new File</title>
-<h1>Upload new File</h1>
-<form method=post enctype=multipart/form-data action="/upload">
-    <input type=file name=file>
-    <input type=submit value=Upload>
-</form>
-<h2>Uploaded Images</h2>
-<ul>
-{% for image in images %}
-    <li><a href="{{ url_for('processed', filename=image) }}">{{ image }}</a></li>
-{% endfor %}
-</ul>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Image Processing App</title>
+</head>
+<body>
+  <h1>Upload a new Image</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="Upload">
+  </form>
+  
+  <h2>Uploaded Images</h2>
+  <ul>
+    {% for blob in blobs %}
+      <li>{{ blob.name }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
