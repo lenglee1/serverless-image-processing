@@ -10,11 +10,11 @@ steps:
 
   # Step to build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/web-app-image', '.']
+    args: ['build', '-t', 'gcr.io/serverless-image-processing/web-app-image', '.']
 
   # Step to push the Docker image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/web-app-image']
+    args: ['push', 'gcr.io/serverless-image-processing/web-app-image']
 
 images:
-  - 'gcr.io/$PROJECT_ID/web-app-image'
+  - 'gcr.io/serverless-image-processing/web-app-image'
