@@ -1,9 +1,10 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
+  - name: 'python:3.9-slim'
     entrypoint: 'bash'
     args:
       - '-c'
       - |
+        pip install --upgrade pip
         pip install -r requirements.txt
         python app.py
 images:
